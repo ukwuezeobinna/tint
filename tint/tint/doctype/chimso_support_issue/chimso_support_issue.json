@@ -1,0 +1,200 @@
+{
+ "actions": [],
+ "allow_copy": 1,
+ "autoname": "field:subject",
+ "creation": "2021-09-05 11:48:33.863885",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "issue_details_section",
+  "issue_id",
+  "subject",
+  "raised_by",
+  "column_break_5",
+  "issue_type",
+  "status",
+  "service_level_section",
+  "priority_level",
+  "column_break_9",
+  "expected_resolution_by",
+  "issue_description_section",
+  "issue_description",
+  "amended_from",
+  "ref_doc",
+  "sent",
+  "alert_user",
+  "cancelled_by"
+ ],
+ "fields": [
+  {
+   "fieldname": "issue_details_section",
+   "fieldtype": "Section Break",
+   "label": "Issue Details"
+  },
+  {
+   "bold": 1,
+   "fieldname": "issue_id",
+   "fieldtype": "Data",
+   "label": "Issue ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "subject",
+   "fieldtype": "Data",
+   "label": "Subject",
+   "unique": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "raised_by",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Raised By",
+   "options": "User"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "issue_type",
+   "fieldtype": "Link",
+   "label": "Issue Type",
+   "options": "Issue Type"
+  },
+  {
+   "bold": 1,
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Status",
+   "options": "Open\nIn Progress\nResolved\nClosed",
+   "read_only": 1
+  },
+  {
+   "fieldname": "service_level_section",
+   "fieldtype": "Section Break",
+   "label": "Service Level"
+  },
+  {
+   "bold": 1,
+   "fieldname": "priority_level",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Priority Level",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "expected_resolution_by",
+   "fieldtype": "Datetime",
+   "label": "Expected Resolution By",
+   "read_only": 1
+  },
+  {
+   "fieldname": "issue_description_section",
+   "fieldtype": "Section Break",
+   "label": "Issue Description"
+  },
+  {
+   "fieldname": "issue_description",
+   "fieldtype": "Text Editor",
+   "label": "Issue Description"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Chimso Support Issue",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Chimso Support Issue",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "bold": 1,
+   "fieldname": "ref_doc",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Reference Document",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "sent",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Sent",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "alert_user",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Alert User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cancelled_by",
+   "fieldtype": "Link",
+   "label": "Cancelled By",
+   "options": "User"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-04-20 23:59:02.184486",
+ "modified_by": "Administrator",
+ "module": "Tint",
+ "name": "Chimso Support Issue",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "if_owner": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

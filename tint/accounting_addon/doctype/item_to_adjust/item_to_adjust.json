@@ -1,0 +1,90 @@
+{
+ "actions": [],
+ "creation": "2021-09-18 04:27:54.334249",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item",
+  "old_price",
+  "new_price",
+  "percentage_change",
+  "status",
+  "item_price",
+  "currency"
+ ],
+ "fields": [
+  {
+   "fieldname": "item",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "percentage_change",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Percentage Change",
+   "read_only": 1,
+   "read_only_depends_on": "eval: doc.status == \"Success\" || doc.new_price;",
+   "reqd": 1
+  },
+  {
+   "fieldname": "old_price",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Old Price",
+   "non_negative": 1,
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "new_price",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "New Price",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "default": "Not Started",
+   "depends_on": "eval: doc.status",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Not Started\nSuccess\nFailed\nPrice Mismatch\nSkipped",
+   "read_only": 1
+  },
+  {
+   "fieldname": "item_price",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Item Price",
+   "options": "Item Price",
+   "read_only": 1
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2021-09-19 09:24:36.806942",
+ "modified_by": "Administrator",
+ "module": "Accounting Addon",
+ "name": "Item To Adjust",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

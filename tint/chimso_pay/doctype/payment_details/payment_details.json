@@ -1,0 +1,106 @@
+{
+ "actions": [],
+ "creation": "2021-07-05 16:40:26.781713",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "status",
+  "amount",
+  "response",
+  "transaction_id",
+  "beneficiary",
+  "reference_document",
+  "error",
+  "payment_type",
+  "salary_payout",
+  "flwref",
+  "txref"
+ ],
+ "fields": [
+  {
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Status"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "reqd": 1
+  },
+  {
+   "fieldname": "response",
+   "fieldtype": "Text",
+   "label": "Response",
+   "reqd": 1
+  },
+  {
+   "fieldname": "transaction_id",
+   "fieldtype": "Data",
+   "label": "Transaction ID"
+  },
+  {
+   "fieldname": "beneficiary",
+   "fieldtype": "Data",
+   "label": "Beneficiary"
+  },
+  {
+   "fieldname": "reference_document",
+   "fieldtype": "Data",
+   "label": "Reference Document"
+  },
+  {
+   "fieldname": "error",
+   "fieldtype": "Data",
+   "label": "Error"
+  },
+  {
+   "fieldname": "payment_type",
+   "fieldtype": "Select",
+   "label": "Payment Type",
+   "options": "Card\nTransfer"
+  },
+  {
+   "fieldname": "salary_payout",
+   "fieldtype": "Link",
+   "label": "Salary Payout",
+   "options": "Salary Payout"
+  },
+  {
+   "fieldname": "flwref",
+   "fieldtype": "Data",
+   "label": "FlwRef"
+  },
+  {
+   "fieldname": "txref",
+   "fieldtype": "Data",
+   "label": "txRef"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2021-07-08 17:40:03.765028",
+ "modified_by": "Administrator",
+ "module": "Chimso Pay",
+ "name": "Payment Details",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

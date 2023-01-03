@@ -1,0 +1,5 @@
+tint.patches.v1_0.generate_api_key
+tint.patches.v1_0.modify_help_dropdown
+tint.patches.v1_0.add_support_option_to_help_dropdown
+tint.patches.v1_0.remove_report_an_issue_from_help_dropdown
+tint.patches.v1_0.add_issue_type_permission

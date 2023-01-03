@@ -1,0 +1,45 @@
+{% extends "templates/web.html" %}
+{% block style %}
+<style>
+  {% include "templates/includes/welcome.css" %}
+</style>
+{% endblock %}
+
+{% block page_content %}
+<div class="container text-center pt-4">
+
+  <h3 class="h2 mb-5 pb-3">Hi {%if frappe.session.user != 'Guest'%}{{frappe.session.user}}{%endif%}! Welcome {%if frappe.session.user == 'Guest'%}{{'to ' + site}}{%endif%}</h3>
+  <br>
+  {% if access != False %}
+  <span class="h5">
+    Please hold on, This won't take long...
+  </span>
+  {% endif %}
+  <div class="site-setup">
+    <div class="site-setup-content">
+      {#<p class="mt-4 mb-5">This won't take long... </p>#}
+      <br />
+      {% if redirect_to_login == True or central == True or created == True %}
+      <div class="spinner-border update-spinner mt-10" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      {% endif %}
+      <br />
+      <p class="update-info mt-5">
+        {% if msg %}
+          {{ msg }}
+        {% endif %}
+      </p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+{% block script %}
+  <script>
+    {% if redirect_to_login == True or central == True or created == True %}
+      window.location.href = '{{frappe.get_url() + '/login'}}'
+    {% endif %}
+    {% include "templates/includes/welcome.js" %}
+  </script>
+{% endblock %}

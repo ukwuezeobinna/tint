@@ -1,0 +1,161 @@
+{
+ "actions": [],
+ "autoname": "format:SP-{date}-{####}",
+ "creation": "2021-07-05 16:43:40.252356",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date",
+  "column_break_2",
+  "total_amount",
+  "salary_slips_list_section",
+  "salary_slips",
+  "deposit_amount",
+  "deposit_document",
+  "amended_from",
+  "fees",
+  "txref",
+  "flwref",
+  "verified_payment",
+  "awaiting_confirmation",
+  "transfer_queued",
+  "transfer_status"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "salary_slips_list_section",
+   "fieldtype": "Section Break",
+   "label": "Salary Slips List"
+  },
+  {
+   "fieldname": "salary_slips",
+   "fieldtype": "Table",
+   "label": "Salary Slips",
+   "no_copy": 1,
+   "options": "Payout Receiver Details",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval: doc.deposit_amount && doc.deposit_document",
+   "fieldname": "deposit_amount",
+   "fieldtype": "Currency",
+   "label": "Deposit Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "deposit_document",
+   "fieldtype": "Link",
+   "label": "Deposit Document",
+   "options": "Payment Details",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Salary Payout",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval: doc.fees",
+   "fieldname": "fees",
+   "fieldtype": "Currency",
+   "label": "Fees",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "txref",
+   "fieldtype": "Data",
+   "label": "txRef",
+   "read_only": 1
+  },
+  {
+   "fieldname": "flwref",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "flwRef",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "verified_payment",
+   "fieldtype": "Check",
+   "label": "Verified Payment",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "awaiting_confirmation",
+   "fieldtype": "Check",
+   "label": "Awaiting Confirmation",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "transfer_queued",
+   "fieldtype": "Check",
+   "label": "Transfer Queued",
+   "read_only": 1
+  },
+  {
+   "fieldname": "transfer_status",
+   "fieldtype": "Select",
+   "label": "Transfer Status",
+   "options": "Successful\nFailed\nPending\nUnPaid",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "group": "Payment Details",
+   "link_doctype": "Payment Details",
+   "link_fieldname": "salary_payout"
+  }
+ ],
+ "modified": "2021-07-09 14:00:45.697494",
+ "modified_by": "Administrator",
+ "module": "Chimso Pay",
+ "name": "Salary Payout",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
